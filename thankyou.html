@@ -3,17 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thank You - YetIndustry</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Thank You — YetIndustry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https: //fonts.googleapis.com/css2?family=Sora:wght@300..700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Sora', system-ui, sans-serif;
+      background: #f7f3ee;
+      color: #1c1917;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 24px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #e7e2db;
+      border-radius: 16px;
+      padding: 48px 40px;
+      max-width: 480px;
+      width: 100%;
+    }
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #c2410c;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 1.5rem;
+    }
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+    }
+    p {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: #78716c;
+      margin-top: 12px;
+      line-height: 1.7;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 28px;
+      background: #c2410c;
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .btn:hover { background: #9a3412; }
+  </style>
 </head>
-<body class="bg-white text-slate-900 font-sans antialiased flex items-center justify-center min-h-screen">
-  <div class="text-center max-w-md mx-auto px-4">
-    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-      <svg class="w-8 h-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-    </div>
-    <h1 class="text-3xl font-bold tracking-tight">Thank You!</h1>
-    <p class="mt-4 text-slate-600">Your message has been sent. We'll get back to you within 24 hours.</p>
-    <a href="/" class="mt-8 inline-flex rounded-full bg-indigo-500 px-8 py-3 text-sm font-semibold text-white hover:bg-indigo-600 transition-colors">Back to Home</a>
+<body>
+  <div class="card">
+    <div class="icon">✓</div>
+    <h1>Message sent.</h1>
+    <p>Thanks for reaching out. We'll review your project and get back to you within 24 hours.</p>
+    <a href="https://yetindustry.online" class="btn">Back to home</a>
   </div>
 </body>
 </html>
