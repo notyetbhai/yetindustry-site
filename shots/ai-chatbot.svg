@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0f0f23"/>
+    </linearGradient>
+    <linearGradient id="msg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="msg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#312e81"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" rx="12" fill="url(#bg1)"/>
+  <rect x="0" y="0" width="400" height="40" rx="12" fill="#1e1b4b"/>
+  <rect x="0" y="24" width="400" height="16" fill="#1e1b4b"/>
+  <circle cx="24" cy="20" r="6" fill="#22c55e"/>
+  <text x="44" y="25" fill="#a5b4fc" font-size="11" font-family="system-ui" font-weight="600">AI Chat</text>
+  <rect x="230" y="12" width="60" height="16" rx="8" fill="#312e81"/>
+  <text x="240" y="24" fill="#818cf8" font-size="8" font-family="system-ui">v2.1.0</text>
+  <rect x="16" y="56" width="240" height="32" rx="8" fill="url(#msg2)"/>
+  <text x="28" y="72" fill="#c7d2fe" font-size="9" font-family="system-ui">Write a Python function to reverse</text>
+  <text x="28" y="84" fill="#c7d2fe" font-size="9" font-family="system-ui">a linked list</text>
+  <rect x="120" y="100" width="256" height="44" rx="8" fill="url(#msg1)"/>
+  <text x="132" y="116" fill="#fff" font-size="9" font-family="system-ui" font-weight="500">def reverse(head):</text>
+  <text x="132" y="128" fill="#fff" font-size="9" font-family="system-ui" font-weight="500">    prev, curr = None, head</text>
+  <text x="132" y="140" fill="#fff" font-size="9" font-family="system-ui" font-weight="500">    while curr: curr.next, prev, curr = prev, curr, curr.next</text>
+  <rect x="16" y="156" width="180" height="32" rx="8" fill="url(#msg2)"/>
+  <text x="28" y="172" fill="#c7d2fe" font-size="9" font-family="system-ui">Train with my custom dataset</text>
+  <text x="28" y="184" fill="#c7d2fe" font-size="9" font-family="system-ui">called training-data.json</text>
+  <rect x="16" y="204" width="368" height="32" rx="20" fill="#312e81" stroke="#4f46e5" stroke-width="1"/>
+  <text x="32" y="224" fill="#818cf8" font-size="10" font-family="system-ui">Type a message...</text>
+  <circle cx="368" cy="220" r="10" fill="#6366f1"/>
+</svg>

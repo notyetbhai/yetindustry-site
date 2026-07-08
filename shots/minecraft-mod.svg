@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="mb" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#0f0f23"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" rx="12" fill="url(#mb)"/>
+  <rect x="0" y="0" width="400" height="40" rx="12" fill="#16213e"/>
+  <rect x="0" y="24" width="400" height="16" fill="#16213e"/>
+  <rect x="16" y="12" width="20" height="20" rx="4" fill="#e2e8f0"/>
+  <rect x="20" y="16" width="4" height="12" fill="#a0aec0"/>
+  <rect x="28" y="16" width="4" height="12" fill="#a0aec0"/>
+  <text x="48" y="26" fill="#e2e8f0" font-size="11" font-family="system-ui" font-weight="600">Resource Scanner</text>
+  <text x="340" y="26" fill="#4ade80" font-size="8" font-family="system-ui">● Active</text>
+  <rect x="16" y="56" width="128" height="128" rx="8" fill="#1e293b"/>
+  <rect x="60" y="80" width="40" height="40" rx="4" fill="#c084fc"/>
+  <rect x="40" y="100" width="40" height="40" rx="4" fill="#e2e8f0"/>
+  <rect x="80" y="100" width="40" height="40" rx="4" fill="#a78bfa"/>
+  <rect x="60" y="120" width="40" height="40" rx="4" fill="#818cf8"/>
+  <rect x="40" y="140" width="40" height="40" rx="4" fill="#c084fc"/>
+  <rect x="16" y="196" width="128" height="22" rx="4" fill="#1e293b"/>
+  <text x="80" y="211" fill="#c084fc" font-size="9" text-anchor="middle" font-family="system-ui">Amethyst: 12 blocks</text>
+  <rect x="160" y="56" width="224" height="32" rx="8" fill="#1e293b"/>
+  <text x="172" y="72" fill="#94a3b8" font-size="9" font-family="system-ui" font-weight="500">Scan Results</text>
+  <text x="364" y="72" fill="#e2e8f0" font-size="9" font-family="system-ui" text-anchor="end">Updated 2s ago</text>
+  <rect x="160" y="96" width="224" height="24" rx="4" fill="#1e293b"/>
+  <rect x="162" y="98" width="8" height="20" rx="2" fill="#22c55e"/>
+  <text x="180" y="112" fill="#e2e8f0" font-size="9" font-family="system-ui">Iron Ore</text>
+  <text x="364" y="112" fill="#22c55e" font-size="9" font-family="system-ui" text-anchor="end">15 blocks → NW</text>
+  <rect x="160" y="126" width="224" height="24" rx="4" fill="#1e293b"/>
+  <rect x="162" y="128" width="8" height="20" rx="2" fill="#3b82f6"/>
+  <text x="180" y="140" fill="#e2e8f0" font-size="9" font-family="system-ui">Diamond</text>
+  <text x="364" y="140" fill="#3b82f6" font-size="9" font-family="system-ui" text-anchor="end">3 blocks → SE</text>
+  <rect x="160" y="156" width="224" height="24" rx="4" fill="#1e293b"/>
+  <rect x="162" y="158" width="8" height="20" rx="2" fill="#f59e0b"/>
+  <text x="180" y="170" fill="#e2e8f0" font-size="9" font-family="system-ui">Gold</text>
+  <text x="364" y="170" fill="#f59e0b" font-size="9" font-family="system-ui" text-anchor="end">8 blocks → SW</text>
+</svg>

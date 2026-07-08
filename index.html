@@ -442,7 +442,7 @@
     .work-card {
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 28px;
+      overflow: hidden;
       cursor: default;
       transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease, border-color 0.4s ease;
     }
@@ -451,6 +451,15 @@
       box-shadow: 0 12px 40px rgba(0,0,0,0.05);
       border-color: var(--accent);
     }
+    .work-card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .work-card-body { padding: 24px 28px 28px; }
     .work-tag {
       display: inline-block;
       font-size: 0.7rem;
@@ -458,10 +467,13 @@
       color: var(--accent);
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
-    .work-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 6px; }
-    .work-card p { font-size: 0.85rem; font-weight: 300; color: var(--text-muted); line-height: 1.7; }
+    .work-card-body h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 6px; }
+    .work-card-body p { font-size: 0.85rem; font-weight: 300; color: var(--text-muted); line-height: 1.7; }
+    .work-card-links { display: flex; gap: 12px; margin-top: 14px; }
+    .work-card-links a { font-size: 0.78rem; font-weight: 500; color: var(--accent); border-bottom: 1px solid transparent; transition: border-color 0.3s ease; }
+    .work-card-links a:hover { border-bottom-color: var(--accent); }
 
     .pricing-header { text-align: center; margin-bottom: 56px; }
     .pricing-header h2 {
@@ -778,15 +790,89 @@
     <div class="container">
       <div class="work-header reveal">
         <div class="section-label"><strong>Portfolio</strong></div>
-        <h2>Recent projects we've shipped</h2>
+        <h2>Projects we've built</h2>
       </div>
       <div class="work-grid">
-        <div class="work-card reveal reveal-d1"><div class="work-tag">Ecommerce</div><h3>CommercePro</h3><p>Full-featured online store with Stripe payments, inventory management, and an analytics dashboard.</p></div>
-        <div class="work-card reveal reveal-d2"><div class="work-tag">Landing Page</div><h3>LaunchPad</h3><p>A high-converting SaaS landing page with A/B testing, analytics, and email capture built in.</p></div>
-        <div class="work-card reveal reveal-d3"><div class="work-tag">Web App</div><h3>TaskFlow</h3><p>Project management dashboard with real-time collaboration, Kanban boards, and reporting.</p></div>
-        <div class="work-card reveal reveal-d1"><div class="work-tag">CMS</div><h3>BlogEngine</h3><p>Custom blog platform with a markdown editor, SEO tools, and social media integration.</p></div>
-        <div class="work-card reveal reveal-d2"><div class="work-tag">Booking System</div><h3>BookIt</h3><p>Appointment scheduling platform with calendar sync, reminders, and payment processing.</p></div>
-        <div class="work-card reveal reveal-d3"><div class="work-tag">API</div><h3>APIHub</h3><p>A RESTful API gateway with rate limiting, caching, documentation, and a developer portal.</p></div>
+        <div class="work-card reveal reveal-d1">
+          <img src="shots/ai-chatbot.svg" alt="AI Chatbot" class="work-card-img" loading="lazy">
+          <div class="work-card-body">
+            <div class="work-tag">AI / Full-Stack</div>
+            <h3>AI Chatbot</h3>
+            <p>ChatGPT-like app built with React + Node.js. Supports custom dataset training (JSON, CSV, TXT), conversation memory, and model management.</p>
+            <div class="work-card-links"><a href="https://github.com/notyetbhai/yets-ai">Source Code →</a></div>
+          </div>
+        </div>
+        <div class="work-card reveal reveal-d2">
+          <img src="shots/ai-copilot.svg" alt="Coding AI" class="work-card-img" loading="lazy">
+          <div class="work-card-body">
+            <div class="work-tag">AI / ML</div>
+            <h3>Production Coding AI</h3>
+            <p>Llama-style Transformer trained from scratch. RoPE, RMSNorm, SwiGLU — pre-trained on code and instruction-tuned. No downloaded weights.</p>
+            <div class="work-card-links"><a href="https://github.com/notyetbhai/own-ai">Source Code →</a></div>
+          </div>
+        </div>
+        <div class="work-card reveal reveal-d3">
+          <img src="shots/vault.svg" alt="Vault Scriptorium" class="work-card-img" loading="lazy">
+          <div class="work-card-body">
+            <div class="work-tag">Security / Web App</div>
+            <h3>Vault Scriptorium</h3>
+            <p>Encrypted credential manager with double encryption (bcrypt + AES Fernet), zero-trust password reveal, expiry timers, and glassmorphism UI.</p>
+            <div class="work-card-links"><a href="https://notifier.yetindustry.online">Live Demo →</a></div>
+          </div>
+        </div>
+        <div class="work-card reveal reveal-d1">
+          <img src="shots/spotify-clone.svg" alt="Spotify Clone" class="work-card-img" loading="lazy">
+          <div class="work-card-body">
+            <div class="work-tag">Full-Stack</div>
+            <h3>Spotify Clone</h3>
+            <p>Music streaming platform with user/admin panels, playlist management, song search, premium subscriptions, and Firebase backend.</p>
+            <div class="work-card-links"><a href="https://github.com/notyetbhai/spotify-clone">Source Code →</a></div>
+          </div>
+        </div>
+        <div class="work-card reveal reveal-d2">
+          <img src="shots/photo-gallery.svg" alt="Photo Gallery" class="work-card-img" loading="lazy">
+          <div class="work-card-body">
+            <div class="work-tag">Mobile App</div>
+            <h3>Photo Gallery</h3>
+            <p>Cross-platform Flutter app for browsing and managing photos. Built with Supabase backend, provider state management, and image uploads.</p>
+            <div class="work-card-links"><a href="https://github.com/notyetbhai/gallery">Source Code →</a></div>
+          </div>
+        </div>
+        <div class="work-card reveal reveal-d3">
+          <img src="shots/nova-vps.svg" alt="Nova VPS" class="work-card-img" loading="lazy">
+          <div class="work-card-body">
+            <div class="work-tag">Cloud / DevOps</div>
+            <h3>Nova VPS Panel</h3>
+            <p>Self-hosted VPS management panel with live resource monitoring, billing system, node agents, and a full REST API — React + FastAPI.</p>
+            <div class="work-card-links"><a href="https://github.com/notyetbhai/nova-vps">Source Code →</a></div>
+          </div>
+        </div>
+        <div class="work-card reveal reveal-d1">
+          <img src="shots/minecraft-mod.svg" alt="Minecraft Mod" class="work-card-img" loading="lazy">
+          <div class="work-card-body">
+            <div class="work-tag">Game Dev / Java</div>
+            <h3>Ore Resource Scanner</h3>
+            <p>Fabric Minecraft mod that scans exposed ores in caves using fair-play detection. Smart mining suggestions with directional guidance.</p>
+            <div class="work-card-links"><a href="https://github.com/notyetbhai/mod1">Source Code →</a></div>
+          </div>
+        </div>
+        <div class="work-card reveal reveal-d2">
+          <img src="shots/file-hub.svg" alt="File Download Hub" class="work-card-img" loading="lazy">
+          <div class="work-card-body">
+            <div class="work-tag">Full-Stack</div>
+            <h3>File Download Hub</h3>
+            <p>Premium file download manager with admin dashboard, user authentication, upload management, built on Express.js + SQLite.</p>
+            <div class="work-card-links"><a href="https://github.com/notyetbhai/file-hub">Source Code →</a></div>
+          </div>
+        </div>
+        <div class="work-card reveal reveal-d3">
+          <div class="work-card-body">
+            <div class="work-tag">AI / Frontend</div>
+            <h3>NVIDIA AI Chat</h3>
+            <p>React frontend for NVIDIA's AI API. Chat with GLM 5.1 and Qwen 3 Coder models. Markdown rendering, syntax highlighting, code copy, file uploads.</p>
+            <div class="work-card-links"><a href="https://github.com/notyetbhai/ai-chats">Source Code →</a></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

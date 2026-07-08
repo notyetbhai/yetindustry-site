@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <defs>
+    <linearGradient id="gb" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="250" rx="12" fill="url(#gb)"/>
+  <text x="20" y="28" fill="#0f172a" font-size="13" font-family="system-ui" font-weight="700">📸 Gallery</text>
+  <text x="350" y="28" fill="#64748b" font-size="9" font-family="system-ui">42 photos</text>
+  <rect x="16" y="44" width="116" height="116" rx="8" fill="#d4d4d8"/>
+  <rect x="16" y="44" width="116" height="116" rx="8" fill="url(#gb)" opacity="0"/>
+  <rect x="36" y="76" width="76" height="20" rx="4" fill="#d4d4d8"/>
+  <rect x="48" y="110" width="52" height="16" rx="4" fill="#d4d4d8"/>
+  <rect x="140" y="44" width="116" height="116" rx="8" fill="#d4d4d8"/>
+  <rect x="160" y="76" width="76" height="20" rx="4" fill="#d4d4d8"/>
+  <rect x="172" y="110" width="52" height="16" rx="4" fill="#d4d4d8"/>
+  <rect x="264" y="44" width="116" height="116" rx="8" fill="#d4d4d8"/>
+  <rect x="284" y="76" width="76" height="20" rx="4" fill="#d4d4d8"/>
+  <rect x="296" y="110" width="52" height="16" rx="4" fill="#d4d4d8"/>
+  <rect x="16" y="172" width="88" height="64" rx="8" fill="#d4d4d8"/>
+  <rect x="112" y="172" width="88" height="64" rx="8" fill="#d4d4d8"/>
+  <rect x="208" y="172" width="88" height="64" rx="8" fill="#d4d4d8"/>
+  <rect x="304" y="172" width="80" height="64" rx="8" fill="#c2410c"/>
+  <text x="344" y="208" fill="#fff" font-size="16" text-anchor="middle" font-family="system-ui" font-weight="700">+</text>
+</svg>
