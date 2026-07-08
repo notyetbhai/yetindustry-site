@@ -412,6 +412,7 @@
     .work {
       background: var(--surface);
       position: relative;
+      overflow: hidden;
     }
     .work::before {
       content: '';
@@ -422,7 +423,7 @@
       height: 1px;
       background: linear-gradient(to right, transparent, var(--border), transparent);
     }
-    .work-header { text-align: center; margin-bottom: 48px; }
+    .work-header { text-align: center; margin-bottom: 56px; }
     .work-header h2 {
       font-size: clamp(1.5rem, 3vw, 2.2rem);
       font-weight: 650;
@@ -431,7 +432,7 @@
     .work-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 16px;
+      gap: 24px;
     }
     @media (min-width: 640px) { .work-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (min-width: 900px) {
@@ -440,40 +441,129 @@
       .work-grid .work-card:nth-child(4) { grid-column: span 2; }
     }
     .work-card {
+      background: var(--bg);
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: 20px;
       overflow: hidden;
       cursor: default;
-      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+      transform: translateY(0);
+      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease, border-color 0.4s ease;
+      position: relative;
     }
     .work-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.05);
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.07);
       border-color: var(--accent);
     }
+    .work-card-img-wrap {
+      position: relative;
+      overflow: hidden;
+      height: 220px;
+      background: linear-gradient(135deg, #1c1917, #292524);
+    }
+    .work-card-img-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(28,25,23,0.6));
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+    .work-card:hover .work-card-img-wrap::after { opacity: 1; }
     .work-card-img {
       width: 100%;
-      height: 180px;
+      height: 100%;
       object-fit: cover;
       display: block;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
+      transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), filter 0.5s ease;
     }
-    .work-card-body { padding: 24px 28px 28px; }
+    .work-card:hover .work-card-img {
+      transform: scale(1.08);
+      filter: brightness(1.1) contrast(1.05);
+    }
+    .work-card-img-overlay {
+      position: absolute;
+      bottom: 16px;
+      left: 20px;
+      z-index: 2;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+      pointer-events: none;
+    }
+    .work-card:hover .work-card-img-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .work-card-img-overlay span {
+      display: inline-block;
+      background: rgba(194,65,12,0.9);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 5px 14px;
+      border-radius: 999px;
+    }
+    .work-card-body { padding: 24px 24px 28px; position: relative; }
     .work-tag {
       display: inline-block;
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       font-weight: 600;
       color: var(--accent);
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       margin-bottom: 8px;
+      position: relative;
+      padding-left: 12px;
     }
-    .work-card-body h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 6px; }
+    .work-tag::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .work-card-body h3 {
+      font-size: 1.1rem;
+      font-weight: 650;
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+      transition: color 0.3s ease;
+    }
+    .work-card:hover .work-card-body h3 { color: var(--accent); }
     .work-card-body p { font-size: 0.85rem; font-weight: 300; color: var(--text-muted); line-height: 1.7; }
-    .work-card-links { display: flex; gap: 12px; margin-top: 14px; }
-    .work-card-links a { font-size: 0.78rem; font-weight: 500; color: var(--accent); border-bottom: 1px solid transparent; transition: border-color 0.3s ease; }
-    .work-card-links a:hover { border-bottom-color: var(--accent); }
+    .work-card-links {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .work-card:hover .work-card-links {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .work-card-links a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap 0.3s ease;
+    }
+    .work-card-links a:hover { gap: 8px; }
 
     .pricing-header { text-align: center; margin-bottom: 56px; }
     .pricing-header h2 {
@@ -794,7 +884,10 @@
       </div>
       <div class="work-grid">
         <div class="work-card reveal reveal-d1">
-          <img src="shots/ai-chatbot.svg" alt="AI Chatbot" class="work-card-img" loading="lazy">
+          <div class="work-card-img-wrap">
+            <img src="shots/ai-chatbot.svg" alt="AI Chatbot" class="work-card-img" loading="lazy">
+            <div class="work-card-img-overlay"><span>React + Node.js</span></div>
+          </div>
           <div class="work-card-body">
             <div class="work-tag">AI / Full-Stack</div>
             <h3>AI Chatbot</h3>
@@ -803,7 +896,10 @@
           </div>
         </div>
         <div class="work-card reveal reveal-d2">
-          <img src="shots/ai-copilot.svg" alt="Coding AI" class="work-card-img" loading="lazy">
+          <div class="work-card-img-wrap">
+            <img src="shots/ai-copilot.svg" alt="Coding AI" class="work-card-img" loading="lazy">
+            <div class="work-card-img-overlay"><span>PyTorch</span></div>
+          </div>
           <div class="work-card-body">
             <div class="work-tag">AI / ML</div>
             <h3>Production Coding AI</h3>
@@ -812,7 +908,10 @@
           </div>
         </div>
         <div class="work-card reveal reveal-d3">
-          <img src="shots/vault.svg" alt="Vault Scriptorium" class="work-card-img" loading="lazy">
+          <div class="work-card-img-wrap">
+            <img src="shots/vault.svg" alt="Vault Scriptorium" class="work-card-img" loading="lazy">
+            <div class="work-card-img-overlay"><span>Flask + PostgreSQL</span></div>
+          </div>
           <div class="work-card-body">
             <div class="work-tag">Security / Web App</div>
             <h3>Vault Scriptorium</h3>
@@ -821,7 +920,10 @@
           </div>
         </div>
         <div class="work-card reveal reveal-d1">
-          <img src="shots/spotify-clone.svg" alt="Spotify Clone" class="work-card-img" loading="lazy">
+          <div class="work-card-img-wrap">
+            <img src="shots/spotify-clone.svg" alt="Spotify Clone" class="work-card-img" loading="lazy">
+            <div class="work-card-img-overlay"><span>PHP + Firebase</span></div>
+          </div>
           <div class="work-card-body">
             <div class="work-tag">Full-Stack</div>
             <h3>Spotify Clone</h3>
@@ -830,7 +932,10 @@
           </div>
         </div>
         <div class="work-card reveal reveal-d2">
-          <img src="shots/photo-gallery.svg" alt="Photo Gallery" class="work-card-img" loading="lazy">
+          <div class="work-card-img-wrap">
+            <img src="shots/photo-gallery.svg" alt="Photo Gallery" class="work-card-img" loading="lazy">
+            <div class="work-card-img-overlay"><span>Flutter + Supabase</span></div>
+          </div>
           <div class="work-card-body">
             <div class="work-tag">Mobile App</div>
             <h3>Photo Gallery</h3>
@@ -839,7 +944,10 @@
           </div>
         </div>
         <div class="work-card reveal reveal-d3">
-          <img src="shots/nova-vps.svg" alt="Nova VPS" class="work-card-img" loading="lazy">
+          <div class="work-card-img-wrap">
+            <img src="shots/nova-vps.svg" alt="Nova VPS" class="work-card-img" loading="lazy">
+            <div class="work-card-img-overlay"><span>React + FastAPI</span></div>
+          </div>
           <div class="work-card-body">
             <div class="work-tag">Cloud / DevOps</div>
             <h3>Nova VPS Panel</h3>
@@ -848,7 +956,10 @@
           </div>
         </div>
         <div class="work-card reveal reveal-d1">
-          <img src="shots/minecraft-mod.svg" alt="Minecraft Mod" class="work-card-img" loading="lazy">
+          <div class="work-card-img-wrap">
+            <img src="shots/minecraft-mod.svg" alt="Minecraft Mod" class="work-card-img" loading="lazy">
+            <div class="work-card-img-overlay"><span>Java + Fabric</span></div>
+          </div>
           <div class="work-card-body">
             <div class="work-tag">Game Dev / Java</div>
             <h3>Ore Resource Scanner</h3>
@@ -857,7 +968,10 @@
           </div>
         </div>
         <div class="work-card reveal reveal-d2">
-          <img src="shots/file-hub.svg" alt="File Download Hub" class="work-card-img" loading="lazy">
+          <div class="work-card-img-wrap">
+            <img src="shots/file-hub.svg" alt="File Download Hub" class="work-card-img" loading="lazy">
+            <div class="work-card-img-overlay"><span>Express.js + SQLite</span></div>
+          </div>
           <div class="work-card-body">
             <div class="work-tag">Full-Stack</div>
             <h3>File Download Hub</h3>
@@ -866,6 +980,9 @@
           </div>
         </div>
         <div class="work-card reveal reveal-d3">
+          <div class="work-card-img-wrap" style="background: linear-gradient(135deg, #1e1b4b, #0f0f23);">
+            <div class="work-card-img-overlay"><span>React + NVIDIA API</span></div>
+          </div>
           <div class="work-card-body">
             <div class="work-tag">AI / Frontend</div>
             <h3>NVIDIA AI Chat</h3>
